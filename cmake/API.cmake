@@ -7,8 +7,8 @@
 #
 # The standard patterns include:
 # - Add a directory to the fprime system. Use this in place of add_subdirectory to get cleanly organized builds.
-# - Register an fprime module/executable/ut to receive the benefits of autocoding.
-# - Register an fprime build target/build stage to allow custom build steps. (Experimental)
+# - Register a fprime module/executable/ut to receive the benefits of autocoding.
+# - Register a fprime build target/build stage to allow custom build steps. (Experimental)
 #
 ####
 include_guard()
@@ -22,7 +22,7 @@ set(FPRIME_AUTOCODER_TARGET_LIST "" CACHE INTERNAL "FPRIME_AUTOCODER_TARGET_LIST
 #
 # Skip this remaining code in the current function or file when executing in the context of a sub build. Sub builds
 # execute utility and setup functions in fprime. However, certain CMake functions are not appropriate in this context
-# and should be skipped.
+# and this should be skipped.
 ####
 macro(skip_on_sub_build)
     if (DEFINED FPRIME_SUB_BUILD_TARGETS)
@@ -33,7 +33,7 @@ endmacro()
 ####
 # Macro `restrict_platforms`:
 #
-# Restricts a CMakeLists.txt file to a given list of supported platforms, toolchains, and features. This prevents
+# Restricts a CMakeLists.txt file to a given list of supported platforms, toolchains, and the features. This prevents
 # usage on platforms/toolchains  for which the module is incapable of being used and replaces the historical pattern of
 # an if-tree detecting unsupported platforms in most circumstances.
 #
@@ -67,7 +67,7 @@ macro(restrict_platforms)
     # However, the reason why this is necessary is that this function is a macro and not a function.
     # Macros copy-paste the code into the calling context. Thus, all these valid cases want to avoid calling return.
     # The return call  in the else block returns from the calling context (i.e. a restricted CMakeList.txt will
-    # return and not process the component setup). We do not want this return when the platform is allowed.
+    # return and not process the component setup). We don't want this return when the platform is allowed.
 
     if (FPRIME_TOOLCHAIN_NAME IN_LIST __CHECKER)
     elseif(FPRIME_PLATFORM IN_LIST __CHECKER)
@@ -277,7 +277,7 @@ endfunction(register_fprime_module)
 #     MyComponentImpl.cpp)
 # ```
 #
-# - **MOD_DEPS:** (optional) cmake list of extra link dependencies. This is optional, and only
+# - **MOD_DEPS:** (optional) cmake's  list of extra link dependencies. This is optional, and only
 #   needed if non-standard link dependencies are used, or if a dependency cannot be inferred from the include graph of
 #   the autocoder inputs to the module. If not set or supplied, only fprime
 #   inferable dependencies will be available. Link flags like "-lpthread" can be here.
