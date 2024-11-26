@@ -773,5 +773,5 @@ For example:
 | 4.1    | 01/17/14  | Updates for OSAL 4.1 release. Sync document version ID to software version. Add information for building and running unit tests.   | A. Cudmore  |
 | 4.2   | 01/31/16 | Moved osconfig.h description into section 2.2.h Consolidated the  \"classic\" build and prerequisites setup into section 2.3. Added new section 2.4 on provisioning a build using cmake. Minor </br> modifications to subsequent sections only where there was a  difference between cmake and classic builds; i.e. the cmake  build has no \"make config\" or \"make depend\". Updated title  page to replace Code 582 banner with cFS. Added header.  | J.Hickey S.Strege   |
 
-                            OSAL DOCUMENTAION END
-                            ---------------------
+                    OSAL DOCUMENTAION END
+                    ---------------------
